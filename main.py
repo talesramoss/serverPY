@@ -1,6 +1,5 @@
-from typing import List
 
-from fastapi import FastAPI, Form, HTTPException, Query
+from fastapi import FastAPI, Form,  Query, HTTPException
 
 
 app = FastAPI()
@@ -11,12 +10,14 @@ suplementos= []
 async def listSuplementos():
     return suplementos
 
+
 @app.get("/suplementos/{suplemento_id}")
 async def getForIDSuplementos(suplemento_id: int):
     for suplemento in suplementos:
         if suplemento["suplemento_id"] == suplemento_id:
             return suplemento
-
+        raise HTTPException (status_code=404, detail="O ID do seu suplemento não está registrado.")
+    
 @app.post("/suplementos")
 async def criarSuplemento(
     nomeSuplemento: str = Form(...),
@@ -30,7 +31,7 @@ async def criarSuplemento(
         "valor": valor,
     }
     suplementos.append(suplemento)
-    return ('foi')
+    return ('suplemento adicionado com sucesso')
 
 @app.put("/suplementos")
 async def updateSuplemento(
@@ -48,14 +49,21 @@ async def updateSuplemento(
     for suplemento in suplementos:
         if suplemento["suplemento_id"] == suplemento_id:
             suplemento.update({'nomeSuplemento': nomeSuplemento, 'marca': marca, 'valor': valor })
-            return 'ovo da galinha pintadinha'
+            return 'Atulização feita com sucesso'
+        raise HTTPException (status_code=404, detail="suplemento não foi atualizado.")
 
 @app.delete("/suplementos")
 async def deleteSuplemento(suplemento_id: int):
     for apagador, suplemento in enumerate(suplementos):
         if suplemento["suplemento_id"] ==  suplemento_id:
             suplementos.pop(apagador)
-            return 'happy birthid two you'
-
-
+            return 'o suplemento foi deletado'
+        raise HTTPException (status_code=404, detail="Suplemento não foi deletado.")
+        
+@app.get("/suplementosSearch")
+async def searchSuplementos(name : str = Query(...)):
+    procurandoSuplementos = [suplemento for suplemento in suplementos if name.lower() in suplemento["nomeSuplemento"].lower()]
+    if procurandoSuplementos:
+        return {'o seu suplmento é': procurandoSuplementos}
+    raise HTTPException (status_code=404, detail="Verifique o nome do suplemento.")
 
