@@ -121,12 +121,12 @@ async def deleteUsuario(gymID: int):
     for apagador, usuario in enumerate(gymBros):
         if usuario["gymID"] ==  gymID:
             gymBros.pop(apagador)
-            return 'o suplemento foi deletado'
+            return 'o usuario foi deletado'
         raise HTTPException (status_code=404, detail="Usuario não foi deletado.")
         
 @app.get("/usuarioSearch")
 async def searchUsuario(name : str = Query(...)):
     procurandoUsuario = [usuario for usuario in gymBros if name.lower() in usuario["nome"].lower()]
     if procurandoUsuario:
-        return {'o seu suplmento é': procurandoUsuario}
+        return {'o usuario é': procurandoUsuario}
     raise HTTPException (status_code=404, detail="Verifique o nome do usuario.")
