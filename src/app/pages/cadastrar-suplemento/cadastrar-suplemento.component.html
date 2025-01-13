@@ -1,34 +1,35 @@
 <form>
-  <div class="inputs">
-    <label for="nome">Nome do suplemento</label>
-    <input
-      type="text"
-      [(ngModel)]="suplemento.nomeSuplemento"
-      id="nome"
-      name="nome"
-      >
-  </div>
-  <div class="inputs">
-    <label for="nome">Marca</label>
-    <input
-      type="text"
-      [(ngModel)]="suplemento.marca"
-      id="marca"
-      name="marca"
-      >
-  </div>
-  <div class="inputs">
-    <label for="nome">Valor</label>
-    <input
-      type="text"
-      [(ngModel)]="suplemento.valor"
-      id="valor"
-      name="valor"
-      >
-  </div>
-
-  <div class="botao">
-    <button (click)="criarSuplemento()">Cadastrar</button>
-    <button (click)="cancelar()">Cancelar</button>
+  <div class="formulario">
+    <div class="inputs">
+      <label for="nome">Nome do suplemento</label>
+      <input
+        type="text"
+        [(ngModel)]="suplemento.nomeSuplemento"
+        id="nome"
+        name="nome"
+        >
+    </div>
+    <div class="inputs">
+      <label for="nome">Marca</label>
+      <input
+        type="text"
+        [(ngModel)]="suplemento.marca"
+        id="marca"
+        name="marca"
+        >
+    </div>
+    <div class="inputs">
+      <label for="nome">Valor</label>
+      <input
+        type="text"
+        [(ngModel)]="suplemento.valor"
+        id="valor"
+        name="valor"
+        >
+    </div>
+    <div class="botao">
+      <button (click)="criarSuplemento()">Cadastrar</button>
+      <button (click)="cancelar()">Cancelar</button>
+    </div>
   </div>
 </form>

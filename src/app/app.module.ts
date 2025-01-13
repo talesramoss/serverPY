@@ -8,12 +8,14 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { CadastrarSuplementoComponent } from './pages/cadastrar-suplemento/cadastrar-suplemento.component';
+import { CabecalhoComponent } from './pages/cabecalho/cabecalho.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListarSuplementosComponent,
-    CadastrarSuplementoComponent
+    CadastrarSuplementoComponent,
+    CabecalhoComponent
   ],
   imports: [
     BrowserModule,

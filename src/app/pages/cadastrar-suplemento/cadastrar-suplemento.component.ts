@@ -9,6 +9,9 @@ import { SuplementosService } from '../../servicos/suplementos.service';
   styleUrl: './cadastrar-suplemento.component.scss'
 })
 export class CadastrarSuplementoComponent {
+
+  formualario !: FormGroup
+
   suplemento = {
     id: 0,
     nomeSuplemento: '',
@@ -18,11 +21,17 @@ export class CadastrarSuplementoComponent {
 
   constructor(
     private suplementoService: SuplementosService,
-    private router: Router
+    private router: Router,
+    private formBuilder: FormBuilder
   ) {}
 
   ngOnInit(): void {
-
+    this.formualario = this.formBuilder.group({
+      id: [0],
+      nome: ['', Validators.compose([Validators.required])],
+      marca: ['', Validators.compose([Validators.required])],
+      valor: ['', Validators.compose([Validators.required])]
+    })
   }
 
   criarSuplemento(){

@@ -3,10 +3,10 @@ section {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #ccc;
 
   .info {
-    margin: 100px;
+    margin: 180px;
+    padding: 0 10rem;
     display: flex;
     justify-content: space-between;
     text-align: center;
@@ -30,7 +30,7 @@ section {
 
   .tela-listagem {
     position: absolute;
-    top: 200px;
+    top: 20rem;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -65,7 +65,5 @@ section {
       }
     }
   }
-
-
 }
 
