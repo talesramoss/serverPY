@@ -65,7 +65,7 @@ async def updateSuplemento(
             return 'Atulização feita com sucesso'
         raise HTTPException (status_code=404, detail="suplemento não foi atualizado.")
 
-@app.delete("/suplementos")
+@app.delete("/suplementos/{suplemento_id}")
 async def deleteSuplemento(suplemento_id: int):
     for apagador, suplemento in enumerate(suplementos):
         if suplemento["suplemento_id"] ==  suplemento_id:

@@ -10,6 +10,7 @@ import { CommonModule } from '@angular/common';
 import { CadastrarSuplementoComponent } from './pages/cadastrar-suplemento/cadastrar-suplemento.component';
 import { CabecalhoComponent } from './pages/cabecalho/cabecalho.component';
 import { TelaLoginComponent } from './pages/tela-login/tela-login.component';
+import { CadastrarUsuarioComponent } from './pages/cadastrar-usuario/cadastrar-usuario.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { TelaLoginComponent } from './pages/tela-login/tela-login.component';
     CadastrarSuplementoComponent,
     CabecalhoComponent,
     TelaLoginComponent,
+    CadastrarUsuarioComponent,
   ],
   imports: [
     BrowserModule,
