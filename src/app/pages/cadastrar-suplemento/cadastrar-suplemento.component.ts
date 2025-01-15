@@ -10,35 +10,31 @@ import { SuplementosService } from '../../servicos/suplementos.service';
 })
 export class CadastrarSuplementoComponent {
 
-  formualario !: FormGroup
-
-  suplemento = {
-    id: 0,
-    nomeSuplemento: '',
-    marca: '',
-    valor: ''
-  }
+  formulario !: FormGroup
 
   constructor(
     private suplementoService: SuplementosService,
     private router: Router,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
   ) {}
 
   ngOnInit(): void {
-    this.formualario = this.formBuilder.group({
+    this.formulario = this.formBuilder.group({
       id: [0],
-      nome: ['', Validators.compose([Validators.required])],
+      nomeSuplemento: ['', Validators.compose([Validators.required])],
       marca: ['', Validators.compose([Validators.required])],
-      valor: ['', Validators.compose([Validators.required])]
+      valor: ['', Validators.compose([Validators.required, Validators.pattern("\\d{1,3}(\\.\\d{3})*,\\d{2}")])]
     })
   }
 
   criarSuplemento(){
-    this.suplementoService.criarSuplementos(this.suplemento).subscribe( suplementos => {
-      console.log('informações suplementos', this.suplemento)
-      this.router.navigate(['/listarSuplementos'])
-    })
+    if(this.formulario.valid) {
+      this.suplementoService.criarSuplementos(this.formulario.value).subscribe( () => {
+        console.log('informações suplementos', this.formulario.value)
+        this.router.navigate(['/listarSuplementos'])
+      })
+
+    }
   }
 
   cancelar() {

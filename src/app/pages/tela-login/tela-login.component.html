@@ -1,0 +1,19 @@
+<main>
+  <div class="formulario">
+    <h2>Tela de Login</h2>
+    <form [formGroup]="formulario">
+      <div class="labels">
+        <label for="">Email</label>
+        <input type="email" name="email" id="email" formControlName="email">
+      </div>
+      <div class="labels">
+        <label for="">Senha</label>
+        <input type="password" name="password" id="password" formControlName="senha">
+      </div>
+      <div class="esqueceuSenha">
+        <a href="">Esqueceu a senha?</a>
+      </div>
+      <button>Entrar</button>
+    </form>
+  </div>
+</main>

@@ -31,4 +31,10 @@ export class SuplementosService {
 
       return this.http.post(`${this.url_API}/criar`, params.toString(), { headers })
   }
+
+  getForIDSuplementos(suplemento_id: Number): Observable<any>   {
+    const url = `${this.url_API}/${suplemento_id}`
+    console.log(url)
+    return this.http.get(url)
+  }
 }

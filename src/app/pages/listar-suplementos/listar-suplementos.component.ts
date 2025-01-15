@@ -9,22 +9,15 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
 })
 export class ListarSuplementosComponent {
 
-  suplemento = {
-    id: 0,
-    nomeSuplemento: '',
-    marca: '',
-    valor: ''
-    }
-
   listarSuplemento: any
 
   constructor (
     private suplementoService: SuplementosService,
-    private router: Router,
-    private route: ActivatedRoute
+    private router: Router
   ) {}
 
   ngOnInit(): void {
+
     this.suplementoService.listSuplementos().subscribe((suplementos) => {
       this.listarSuplemento = suplementos
       console.log(this.listarSuplemento);

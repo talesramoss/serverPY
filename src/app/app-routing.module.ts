@@ -2,11 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ListarSuplementosComponent } from './pages/listar-suplementos/listar-suplementos.component';
 import { CadastrarSuplementoComponent } from './pages/cadastrar-suplemento/cadastrar-suplemento.component';
+import { TelaLoginComponent } from './pages/tela-login/tela-login.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'listarSuplementos',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'cadastrarSuplemento',
     component: CadastrarSuplementoComponent
+  },
+  {
+    path: 'login',
+    component: TelaLoginComponent
   }
 ];
 

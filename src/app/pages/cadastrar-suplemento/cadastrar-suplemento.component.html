@@ -1,31 +1,45 @@
-<form>
+<form [formGroup]="formulario">
   <div class="formulario">
     <div class="inputs">
       <label for="nome">Nome do suplemento</label>
       <input
         type="text"
-        [(ngModel)]="suplemento.nomeSuplemento"
+        formControlName="nomeSuplemento"
         id="nome"
         name="nome"
+        #nome
         >
+
+        <div class="mensagem__erro" *ngIf="formulario.get('nomeSuplemento')?.errors?.['required'] && formulario.get('nomeSuplemento')?.touched">
+          Esse campo é obrigatório
+        </div>
     </div>
     <div class="inputs">
       <label for="nome">Marca</label>
       <input
         type="text"
-        [(ngModel)]="suplemento.marca"
+        formControlName="marca"
         id="marca"
         name="marca"
         >
+        <div class="mensagem__erro" *ngIf="formulario.get('marca')?.errors?.['required'] && formulario.get('marca')?.touched">
+          Esse campo é obrigatório
+        </div>
     </div>
     <div class="inputs">
       <label for="nome">Valor</label>
       <input
         type="text"
-        [(ngModel)]="suplemento.valor"
+        formControlName="valor"
         id="valor"
         name="valor"
         >
+        <div class="mensagem__erro" *ngIf="formulario.get('valor')?.errors?.['required'] && formulario.get('valor')?.touched">
+          Esse campo é obrigatório
+        </div>
+        <div class="mensagem__erro" *ngIf="formulario.get('valor')?.errors?.['pattern'] && formulario.get('valor')?.touched">
+          Digite o preço em números, EX: 9,99
+        </div>
     </div>
     <div class="botao">
       <button (click)="criarSuplemento()">Cadastrar</button>

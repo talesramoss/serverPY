@@ -9,13 +9,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { CadastrarSuplementoComponent } from './pages/cadastrar-suplemento/cadastrar-suplemento.component';
 import { CabecalhoComponent } from './pages/cabecalho/cabecalho.component';
+import { TelaLoginComponent } from './pages/tela-login/tela-login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListarSuplementosComponent,
     CadastrarSuplementoComponent,
-    CabecalhoComponent
+    CabecalhoComponent,
+    TelaLoginComponent,
   ],
   imports: [
     BrowserModule,

@@ -5,6 +5,8 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
+# PERMITINDO QUE O ANGULAR ACESSE O BACKEND
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins = ["http://localhost:4200"],
