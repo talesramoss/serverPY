@@ -94,36 +94,40 @@ async def getForIDSuplementos(gymID: int):
         raise HTTPException (status_code=404, detail="O ID do Usuario não está registrado.")
 
 @app.post("/usuario")
-async def criarSuplemento(
+async def criarUsuario(
     nome: str = Form(...),
     email: str = Form(...),
-    telefone: str = Form(...)
+    telefone: str = Form(...),
+    senha: str = Form(...)
 ):
     usuario = {
         "gymID": len(gymBros) + 1,
         "nome": nome,
         "email": email,
         "telefone": telefone,
+        "senha": senha
     }
     gymBros.append(usuario)
     return ('Usuario adicionado com sucesso')
 
 @app.put("/usuario")
-async def updateSuplemento(
+async def updateUsuario(
     gymID: int,
     nome: str = Form(...),
     email: str = Form(...),
-    telefone: str = Form(...)
+    telefone: str = Form(...),
+    senha: str = Form(...)
 ):
     usuario = {
         "gymID": (len(gymBros) + 1),
         "nome": nome,
         "email": email,
         "telefone": telefone,
+        "senha": senha
     }
     for usuario in gymBros:
         if usuario["gymID"] == gymID:
-            usuario.update({'nome': nome, 'email': email, 'telefone': telefone })
+            usuario.update({'nome': nome, 'email': email, 'telefone': telefone, 'senha': senha })
             return 'Atulização feita com sucesso'
         raise HTTPException (status_code=404, detail="Usuario não foi atualizado.")
 
