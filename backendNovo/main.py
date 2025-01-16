@@ -1,4 +1,4 @@
-
+import json
 from fastapi import FastAPI, Form,  Query, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -15,9 +15,28 @@ app.add_middleware(
     allow_headers = ["*"]
 )
 
-suplementos= []
-gymBros= []
+# Função para carregar dados do JSON
+def carregar_dados():
+    try:
+        with open('banco-de-dados/db.json', 'r') as file:
+            dados = json.load(file)
+            return dados.get('suplementos', []), dados.get('gymBros', [])
+    except FileNotFoundError:
+        return [], []
+    except json.JSONDecodeError:
+        return [], []
 
+# Função para salvar dados no JSON
+def salvar_dados(suplementos, gymBros):
+    dados = {
+        'suplementos': suplementos,
+        'gymBros': gymBros
+    }
+    with open('banco-de-dados/db.json', 'w') as file:
+        json.dump(dados, file, indent=4)
+
+# Inicialização dos dados
+suplementos, gymBros = carregar_dados()
 
 @app.get('/suplementos')
 async def listSuplementos():
@@ -44,6 +63,7 @@ async def criarSuplemento(
         "valor": valor,
     }
     suplementos.append(suplemento)
+    salvar_dados(suplementos, gymBros)  # Salva os dados após modificação
     return ('suplemento adicionado com sucesso')
 
 @app.put("/suplementos/editar")
@@ -108,6 +128,7 @@ async def criarUsuario(
         "senha": senha
     }
     gymBros.append(usuario)
+    salvar_dados(suplementos, gymBros)  # Salva os dados após modificação
     return ('Usuario adicionado com sucesso')
 
 @app.put("/usuario")
