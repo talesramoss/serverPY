@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListarSuplementosComponent } from './pages/listar-suplementos/listar-suplementos.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { CadastrarSuplementoComponent } from './pages/cadastrar-suplemento/cadastrar-suplemento.component';
 import { CabecalhoComponent } from './pages/cabecalho/cabecalho.component';
@@ -23,7 +23,6 @@ import { RouterModule } from '@angular/router';
 
     AppRoutingModule,
     HttpClientModule,
-    FormsModule,
     ReactiveFormsModule,
     CommonModule,
     NgModule,
