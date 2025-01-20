@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { NgModel } from '@angular/forms';
 
 @Component({
   selector: 'app-tela-login',
@@ -8,17 +10,21 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class TelaLoginComponent {
 
-  formulario !: FormGroup
-
   constructor(
-    private formBuilder: FormBuilder
+    private router: Router
   ) {}
 
-  ngOnInit(): void {
-    this.formulario = this.formBuilder.group({
-      id: [''],
-      email: [''],
-      senha: ['']
-    })
+  ngOnInit(): void {}
+
+  entrar(){
+    this.router.navigate(['/listarSuplementos'])
+  }
+
+  login(form: NgForm) {
+    if(form.valid) {
+      this.router.navigate(['/listarSuplemento'])
+    } else {
+      alert('Formulário inválido')
+    }
   }
 }

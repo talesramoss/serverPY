@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { SuplementosService } from '../../servicos/suplementos.service';
 
@@ -8,7 +8,7 @@ import { SuplementosService } from '../../servicos/suplementos.service';
   templateUrl: './cadastrar-suplemento.component.html',
   styleUrl: './cadastrar-suplemento.component.scss'
 })
-export class CadastrarSuplementoComponent {
+export class CadastrarSuplementoComponent implements OnInit {
 
   formulario !: FormGroup
 
@@ -16,14 +16,16 @@ export class CadastrarSuplementoComponent {
     private suplementoService: SuplementosService,
     private router: Router,
     private formBuilder: FormBuilder,
-  ) {}
+  ) {
+
+  }
 
   ngOnInit(): void {
     this.formulario = this.formBuilder.group({
       id: [0],
       nomeSuplemento: ['', Validators.compose([Validators.required])],
       marca: ['', Validators.compose([Validators.required])],
-      valor: ['', Validators.compose([Validators.required, Validators.pattern("\\d{1,3}(\\.\\d{3})*,\\d{2}")])]
+      valor: ['', Validators.compose([Validators.required, Validators.pattern(/^\d+(\,\d{1,2})?$/)])]
     })
   }
 
@@ -40,5 +42,4 @@ export class CadastrarSuplementoComponent {
   cancelar() {
     this.router.navigate(['/listarSuplementos'])
   }
-
 }

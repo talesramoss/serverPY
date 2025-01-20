@@ -1,16 +1,15 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListarSuplementosComponent } from './pages/listar-suplementos/listar-suplementos.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { CadastrarSuplementoComponent } from './pages/cadastrar-suplemento/cadastrar-suplemento.component';
 import { CabecalhoComponent } from './pages/cabecalho/cabecalho.component';
-import { TelaLoginComponent } from './pages/tela-login/tela-login.component';
 import { CadastrarUsuarioComponent } from './pages/cadastrar-usuario/cadastrar-usuario.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -18,16 +17,18 @@ import { CadastrarUsuarioComponent } from './pages/cadastrar-usuario/cadastrar-u
     ListarSuplementosComponent,
     CadastrarSuplementoComponent,
     CabecalhoComponent,
-    TelaLoginComponent,
     CadastrarUsuarioComponent,
   ],
   imports: [
-    BrowserModule,
+
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    CommonModule
+    CommonModule,
+    NgModule,
+    RouterModule.forRoot([]),
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

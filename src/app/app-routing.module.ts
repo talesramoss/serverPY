@@ -2,13 +2,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ListarSuplementosComponent } from './pages/listar-suplementos/listar-suplementos.component';
 import { CadastrarSuplementoComponent } from './pages/cadastrar-suplemento/cadastrar-suplemento.component';
-import { TelaLoginComponent } from './pages/tela-login/tela-login.component';
 import { CadastrarUsuarioComponent } from './pages/cadastrar-usuario/cadastrar-usuario.component';
+import { AppComponent } from './app.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: '/login',
     pathMatch: 'full'
   },
   {
@@ -20,10 +20,6 @@ const routes: Routes = [
     component: CadastrarSuplementoComponent
   },
   {
-    path: 'login',
-    component: TelaLoginComponent
-  },
-  {
     path: 'loginCadastrar',
     component: CadastrarUsuarioComponent
   }
@@ -31,6 +27,8 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [],
+  bootstrap: [AppComponent]
 })
 export class AppRoutingModule { }

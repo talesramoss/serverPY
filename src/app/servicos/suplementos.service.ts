@@ -1,8 +1,6 @@
-import { Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { observableToBeFn } from 'rxjs/internal/testing/TestScheduler';
 
 @Injectable({
   providedIn: 'root'

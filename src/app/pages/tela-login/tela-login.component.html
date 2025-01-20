@@ -1,10 +1,23 @@
 <main>
   <div class="formulario">
     <h2>Tela de Login</h2>
-    <form [formGroup]="formulario">
+    <form #f="ngForm" (ngSubmit)="login(f)">
       <div class="labels">
         <label for="">Email</label>
-        <input type="email" name="email" id="email" formControlName="email">
+        <input
+          type="email"
+          name="email"
+          id="email"
+          ngModel
+          required
+          #email="ngModel"
+          pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$">
+        <div class="mensagem__erro" *ngIf="email?.invalid && email?.touched || email?.dirty">
+          Esse campo é obrigatório
+        </div>
+        <div class="mensagem__erro" *ngIf="email?.errors?.['pattern'] && email?.touched">
+          Esse campo deve ter esse padrão: "exemploexemplo.com"
+        </div>
       </div>
       <div class="labels">
         <label for="">Senha</label>
@@ -13,7 +26,7 @@
       <div class="esqueceuSenha">
         <a href="">Esqueceu a senha?</a>
       </div>
-      <button>Entrar</button>
+      <button (click)="entrar()">Entrar</button>
     </form>
   </div>
 </main>
