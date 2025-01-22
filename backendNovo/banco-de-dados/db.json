@@ -1,4 +1,12 @@
 {
     "suplementos": [],
-    "gymBros": []
+    "gymBros": [
+        {
+            "gymID": 1,
+            "nome": "Davi Maciel e Silva",
+            "email": "davimaciel077@gmail.com",
+            "telefone": "88997652424",
+            "senha": "1234"
+        }
+    ]
 }

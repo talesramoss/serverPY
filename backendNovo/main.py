@@ -107,13 +107,13 @@ async def listSuplementos():
 
 
 @app.get("/usuario/{gymID}")
-async def getForIDSuplementos(gymID: int):
+async def getForIDSusuario(gymID: int):
     for usuario in gymBros:
         if usuario["gymID"] == gymID:
             return usuario
         raise HTTPException (status_code=404, detail="O ID do Usuario não está registrado.")
 
-@app.post("/usuario")
+@app.post("/usuario/criar")
 async def criarUsuario(
     nome: str = Form(...),
     email: str = Form(...),

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { SuplementosService } from '../../servicos/suplementos.service';
 import { ActivatedRoute, Route, Router } from '@angular/router';
+import { SuplementosService } from '../../views/suplementos/suplementos.service';
 
 @Component({
   selector: 'app-listar-suplementos',
