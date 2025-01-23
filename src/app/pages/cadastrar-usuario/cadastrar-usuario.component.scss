@@ -1,43 +1,77 @@
 main{
-  width: 100%;
-  height: 100vh;
+
+  margin: 0;
+  padding: 0;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  text-align: center;
+  background-color: #f4f4f4;
+  padding-top: 20px;
+  height: 100vh;
+  justify-content: center;
 
   .formulario{
+    width: 100%;
+    max-width: 400px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+      h2{
+        text-align: center;
+        height: 70px;
+      }
+
+  .labels {
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    padding: 4rem 3rem;
 
-    .labels {
-      display: flex;
-      flex-direction: column;
-      text-align: start;
-      font-size: 20px;
-      padding-bottom: 20px;
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
     }
 
-    button {
+    input{
       width: 100%;
-      border-radius: 5px;
-      margin-top: 20px;
-      padding: 5px 0;
-      border: none;
-      background-color: #007BFF;
+      padding: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      }
     }
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    font-size: 20px;
+    padding-bottom: 30px;
 
-    button:hover {
-      background: #0056b3;
-    }
   }
+
+  button {
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 20px;
+    padding: 5px 0;
+    border: none;
+    color: white;
+    background-color:rgb(78, 78, 226);
+  }
+
+  button:hover {
+    background: #0056b3;
+  }
+
 
   .mensagem__erro {
     color: red;
     font-size: 12px;
+  }
+
+  p {
+    text-decoration: underline;
+    color: #0056b3;
+    cursor: pointer;
+    padding-top: 20px;
   }
 }

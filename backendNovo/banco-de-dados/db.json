@@ -11,6 +11,36 @@
             "nomeSuplemento": "asd",
             "marca": "asd",
             "valor": "as"
+        },
+        {
+            "suplemento_id": 2,
+            "nomeSuplemento": "asd",
+            "marca": "asd",
+            "valor": "as"
+        },
+        {
+            "suplemento_id": 2,
+            "nomeSuplemento": "asd",
+            "marca": "asd",
+            "valor": "as"
+        },
+        {
+            "suplemento_id": 2,
+            "nomeSuplemento": "asd",
+            "marca": "asd",
+            "valor": "as"
+        },
+        {
+            "suplemento_id": 7,
+            "nomeSuplemento": "Tales Araujo Ramos",
+            "marca": "2ew",
+            "valor": "23,88"
+        },
+        {
+            "suplemento_id": 7,
+            "nomeSuplemento": "Tales Araujo Ramos",
+            "marca": "2ew",
+            "valor": "23,88"
         }
     ],
     "gymBros": [
@@ -20,6 +50,13 @@
             "email": "davimaciel077@gmail.com",
             "telefone": "88997652424",
             "senha": "1234"
+        },
+        {
+            "gymID": 2,
+            "nome": "oi",
+            "email": "tudo",
+            "telefone": "9899",
+            "senha": "admin"
         }
     ]
 }

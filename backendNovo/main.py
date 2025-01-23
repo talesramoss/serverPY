@@ -163,9 +163,9 @@ async def searchUsuario(name : str = Query(...)):
         return {'o usuario é': procurandoUsuario}
     raise HTTPException (status_code=404, detail="Verifique o nome do usuario.")
 
-@app.get("/usuario/login")
+@app.post("/login")
 async def loginUsuario(email: str = Form(...), senha: str = Form(...)):
     for usuario in gymBros:
         if usuario["email"] == email and usuario["senha"] == senha:
             return 'Usuario logado com sucesso'
-        raise HTTPException (status_code=404, detail="Usuario não Existe.")
+    raise HTTPException (status_code=404, detail="Usuario não Existe.")
