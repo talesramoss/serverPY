@@ -5,7 +5,6 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
-# PERMITINDO QUE O ANGULAR ACESSE O BACKEND
 
 app.add_middleware(
     CORSMiddleware,
@@ -15,7 +14,6 @@ app.add_middleware(
     allow_headers = ["*"]
 )
 
-# Função para carregar dados do JSON
 def carregar_dados():
     try:
         with open('banco-de-dados/db.json', 'r') as file:
@@ -26,7 +24,6 @@ def carregar_dados():
     except json.JSONDecodeError:
         return [], []
 
-# Função para salvar dados no JSON
 def salvar_dados(suplementos, gymBros):
     dados = {
         'suplementos': suplementos,
@@ -35,7 +32,6 @@ def salvar_dados(suplementos, gymBros):
     with open('banco-de-dados/db.json', 'w') as file:
         json.dump(dados, file, indent=4)
 
-# Inicialização dos dados
 suplementos, gymBros = carregar_dados()
 
 @app.get('/suplementos')
@@ -63,7 +59,7 @@ async def criarSuplemento(
         "valor": valor,
     }
     suplementos.append(suplemento)
-    salvar_dados(suplementos, gymBros)  # Salva os dados após modificação
+    salvar_dados(suplementos, gymBros)  
     return ('suplemento adicionado com sucesso')
 
 @app.put("/suplementos/editar")
@@ -128,7 +124,7 @@ async def criarUsuario(
         "senha": senha
     }
     gymBros.append(usuario)
-    salvar_dados(suplementos, gymBros)  # Salva os dados após modificação
+    salvar_dados(suplementos, gymBros)  
     return ('Usuario adicionado com sucesso')
 
 @app.put("/usuario")
@@ -166,3 +162,10 @@ async def searchUsuario(name : str = Query(...)):
     if procurandoUsuario:
         return {'o usuario é': procurandoUsuario}
     raise HTTPException (status_code=404, detail="Verifique o nome do usuario.")
+
+@app.get("/usuario/login")
+async def loginUsuario(email: str = Form(...), senha: str = Form(...)):
+    for usuario in gymBros:
+        if usuario["email"] == email and usuario["senha"] == senha:
+            return 'Usuario logado com sucesso'
+        raise HTTPException (status_code=404, detail="Usuario não Existe.")
