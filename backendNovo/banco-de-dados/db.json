@@ -20,6 +20,13 @@
             "email": "davimaciel077@gmail.com",
             "telefone": "88997652424",
             "senha": "1234"
+        },
+        {
+            "gymID": 2,
+            "nome": "oi",
+            "email": "tudo",
+            "telefone": "9899",
+            "senha": "admin"
         }
     ]
 }
