@@ -1,4 +1,6 @@
-<form [formGroup]="formulario">
+
+  <section>
+  <form [formGroup]="formulario">
     <div class="formulario">
       <div class="inputs">
         <label for="nome">Nome do suplemento</label>
@@ -7,7 +9,7 @@
           formControlName="nomeSuplemento"
           id="nome"
           >
-  
+
           <div class="mensagem__erro" *ngIf="formulario.get('nomeSuplemento')?.errors?.['required'] && formulario.get('nomeSuplemento')?.touched">
             Esse campo é obrigatório
           </div>
@@ -18,6 +20,7 @@
           type="text"
           formControlName="marca"
           id="marca"
+          name="marca"
           >
           <div class="mensagem__erro" *ngIf="formulario.get('marca')?.errors?.['required'] && formulario.get('marca')?.touched">
             Esse campo é obrigatório
@@ -29,6 +32,7 @@
           type="text"
           formControlName="valor"
           id="valor"
+          name="valor"
           >
           <div class="mensagem__erro" *ngIf="formulario.get('valor')?.errors?.['required'] && formulario.get('valor')?.touched">
             Esse campo é obrigatório
@@ -43,4 +47,4 @@
       </div>
     </div>
   </form>
-  
+</section>

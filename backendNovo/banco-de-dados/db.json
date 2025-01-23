@@ -11,6 +11,36 @@
             "nomeSuplemento": "asd",
             "marca": "asd",
             "valor": "as"
+        },
+        {
+            "suplemento_id": 2,
+            "nomeSuplemento": "asd",
+            "marca": "asd",
+            "valor": "as"
+        },
+        {
+            "suplemento_id": 2,
+            "nomeSuplemento": "asd",
+            "marca": "asd",
+            "valor": "as"
+        },
+        {
+            "suplemento_id": 2,
+            "nomeSuplemento": "asd",
+            "marca": "asd",
+            "valor": "as"
+        },
+        {
+            "suplemento_id": 7,
+            "nomeSuplemento": "Tales Araujo Ramos",
+            "marca": "2ew",
+            "valor": "23,88"
+        },
+        {
+            "suplemento_id": 7,
+            "nomeSuplemento": "Tales Araujo Ramos",
+            "marca": "2ew",
+            "valor": "23,88"
         }
     ],
     "gymBros": [
