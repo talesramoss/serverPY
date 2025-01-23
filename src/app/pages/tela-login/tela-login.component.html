@@ -1,19 +1,20 @@
 <main>
   <div class="formulario">
     <h2>Tela de Login</h2>
-    <form [formGroup]="formulario">
+    <form [formGroup]="formularioUser">
       <div class="labels">
         <label for="">Email</label>
         <input type="email" name="email" id="email" formControlName="email">
+        <div class="mensagem__erro" *ngIf="formularioUser.get('email')?.errors?.['required'] && formularioUser.get('email')?.touched">Campo obrigatório</div>
       </div>
       <div class="labels">
         <label for="">Senha</label>
         <input type="password" name="password" id="password" formControlName="senha">
+        <div class="mensagem__erro" *ngIf="formularioUser.get('senha')?.errors?.['required'] && formularioUser.get('senha')?.touched">Campo obrigatório</div>
       </div>
-      <div class="esqueceuSenha">
-        <a href="">Esqueceu a senha?</a>
-      </div>
-      <button>Entrar</button>
+      <button (click)="entrar()">Entrar</button>
+
+      <p (click)="cadastrar()">Cadastrar-se</p>
     </form>
   </div>
 </main>

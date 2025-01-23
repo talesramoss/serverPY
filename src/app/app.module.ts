@@ -8,7 +8,6 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { CadastrarSuplementoComponent } from './pages/cadastrar-suplemento/cadastrar-suplemento.component';
-import { CabecalhoComponent } from './pages/cabecalho/cabecalho.component';
 import { TelaLoginComponent } from './pages/tela-login/tela-login.component';
 import { CadastrarUsuarioComponent } from './pages/cadastrar-usuario/cadastrar-usuario.component';
 
@@ -17,7 +16,6 @@ import { CadastrarUsuarioComponent } from './pages/cadastrar-usuario/cadastrar-u
     AppComponent,
     ListarSuplementosComponent,
     CadastrarSuplementoComponent,
-    CabecalhoComponent,
     TelaLoginComponent,
     CadastrarUsuarioComponent,
   ],

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { SuplementosService } from '../../servicos/suplementos.service';
+import { SuplementosService } from '../../views/suplementos/suplementos.service';
 
 @Component({
   selector: 'app-cadastrar-suplemento',

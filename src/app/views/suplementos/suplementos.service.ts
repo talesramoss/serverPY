@@ -1,14 +1,11 @@
-import { Validators } from '@angular/forms';
-import { Observable } from 'rxjs';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { observableToBeFn } from 'rxjs/internal/testing/TestScheduler';
+import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SuplementosService {
-
   private readonly url_API = 'http://127.0.0.1:8000/suplementos'
 
   constructor(
