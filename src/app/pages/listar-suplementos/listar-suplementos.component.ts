@@ -27,4 +27,12 @@ export class ListarSuplementosComponent {
   cadastrar() {
     this.router.navigate(['/cadastrarSuplemento'])
   }
+
+  editar() {
+    this.router.navigate(['editarSuplemento'])
+  }
+
+  excluir() {
+
+  }
 }

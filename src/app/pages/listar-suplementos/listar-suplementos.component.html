@@ -22,8 +22,8 @@
               <td>{{item.marca}}</td>
               <td>R${{item.valor}}</td>
               <div class="icon">
-                <img src="../../../assets/acoes/pencil-square.svg" alt="editar">
-                <img src="../../../assets/acoes/trash3-fill.svg" alt="excluir">
+                <img src="../../../assets/acoes/pencil-square.svg" alt="editar" (click)="editar()">
+                <img src="../../../assets/acoes/trash3-fill.svg" alt="excluir" (click)="excluir()">
               </div>
             </tr>
         </thead>

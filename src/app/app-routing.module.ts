@@ -4,6 +4,7 @@ import { ListarSuplementosComponent } from './pages/listar-suplementos/listar-su
 import { CadastrarSuplementoComponent } from './pages/cadastrar-suplemento/cadastrar-suplemento.component';
 import { TelaLoginComponent } from './pages/tela-login/tela-login.component';
 import { CadastrarUsuarioComponent } from './pages/cadastrar-usuario/cadastrar-usuario.component';
+import { EditarComponent } from './pages/editar/editar.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'loginCadastrar',
     component: CadastrarUsuarioComponent
+  },
+  {
+    path: 'editarSuplemento',
+    component: EditarComponent
   }
 ];
 

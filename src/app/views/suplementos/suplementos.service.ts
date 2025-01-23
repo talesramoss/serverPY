@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { SubscriptionLoggable } from 'rxjs/internal/testing/SubscriptionLoggable';
 
 @Injectable({
   providedIn: 'root'
@@ -33,5 +34,10 @@ export class SuplementosService {
     const url = `${this.url_API}/${suplemento_id}`
     console.log(url)
     return this.http.get(url)
+  }
+
+  updateSuplemento(suplemento: any): Observable<any> {
+    const url = `${this.url_API}/editar`
+    return this.http.put(url, suplemento)
   }
 }

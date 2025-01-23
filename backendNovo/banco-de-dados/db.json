@@ -1,5 +1,18 @@
 {
-    "suplementos": [],
+    "suplementos": [
+        {
+            "suplemento_id": 1,
+            "nomeSuplemento": "Creatina",
+            "marca": "Black skill",
+            "valor": "79,99"
+        },
+        {
+            "suplemento_id": 2,
+            "nomeSuplemento": "asd",
+            "marca": "asd",
+            "valor": "as"
+        }
+    ],
     "gymBros": [
         {
             "gymID": 1,
