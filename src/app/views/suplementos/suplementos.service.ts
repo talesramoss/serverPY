@@ -37,7 +37,10 @@ export class SuplementosService {
   }
 
   updateSuplemento(suplemento: any): Observable<any> {
-    const url = `${this.url_API}/editar`
-    return this.http.put(url, suplemento)
+
+    const url = `${this.url_API}/editar`;
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.put(url, suplemento, { headers });
   }
+
 }

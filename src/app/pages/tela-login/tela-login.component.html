@@ -13,9 +13,9 @@
         <input type="password" name="password" id="password" formControlName="senha">
         <div class="mensagem__erro" *ngIf="formularioUser.get('senha')?.errors?.['required'] && formularioUser.get('senha')?.touched">Campo obrigatório</div>
       </div>
-      <button (click)="entrar()">Entrar</button>
+      <button (click)="loginUsuario()">Entrar</button>
 
-      
+
     </form>
     <div class="toglle">
       <h3>Bem-vindo a nossa plataforma</h3>
@@ -27,4 +27,3 @@
 
   </div>
 </main>
-  

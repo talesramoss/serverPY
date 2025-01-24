@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 export class UsuariosService {
 
   private readonly url_USER = 'http://127.0.0.1:8000/usuario'
+  private readonly url_LOGIN = 'http://127.0.0.1:8000/login'
 
   constructor(
     private http: HttpClient
@@ -30,4 +31,15 @@ export class UsuariosService {
 
     return this.http.post(`${this.url_USER}/criar`, params.toString(), { headers })
   }
+
+  loginUsuario(email: string, senha: string): Observable<any> {
+    const params = new HttpParams()
+      .set('email', email)
+      .set('senha', senha);
+
+    const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    return this.http.post(this.url_LOGIN, params.toString(), { headers });
+  }
+
+
 }

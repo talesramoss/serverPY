@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UsuariosService } from '../../views/usuarios/usuarios.service';
 
 @Component({
   selector: 'app-tela-login',
@@ -13,7 +14,8 @@ export class TelaLoginComponent {
 
   constructor(
     private formBuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private user: UsuariosService
   ) {}
 
   ngOnInit(): void {
@@ -32,5 +34,20 @@ export class TelaLoginComponent {
 
   cadastrar() {
     this.router.navigate(['/loginCadastrar'])
+  }
+
+  loginUsuario() {
+    if(this.formularioUser.valid) {
+
+      const { email, senha } =this.formularioUser.value
+
+      this.user.loginUsuario(email, senha).subscribe((response) => {
+        console.log('Login: ',response);
+        this.router.navigate(['/listarSuplementos'])
+      })
+    }
+    else {
+      alert("Formulário inválido")
+    }
   }
 }
