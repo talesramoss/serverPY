@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { SuplementosService } from '../../views/suplementos/suplementos.service';
+import { Suplemento } from '../../views/interface';
 
 @Component({
   selector: 'app-listar-suplementos',
@@ -29,6 +30,7 @@ export class ListarSuplementosComponent {
   }
 
   editar() {
+
     this.router.navigate(['editarSuplemento'])
   }
 

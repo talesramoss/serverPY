@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { FormBuilder } from '@angular/forms';
 import { Validators } from '@angular/forms';
+import { Suplemento } from '../../views/interface';
 
 @Component({
   selector: 'app-editar',
@@ -27,21 +28,20 @@ export class EditarComponent {
     const idNumber = Number(id)
 
     if(id){
-      this.service.getForIDSuplementos(idNumber).subscribe((suplemento: any) => {
+      this.service.getForIDSuplementos(idNumber).subscribe((suplemento: Suplemento) => {
         this.formulario.patchValue(suplemento)
       })
     }
 
     this.formulario = this.formBuilder.group({
-      id: [''],
+      id: [0],
       nomeSuplemento: ['', Validators.compose([Validators.required])],
       marca: ['', Validators.compose([Validators.required])],
       valor: ['']
     })
   }
 
-  editarSuplemento() {
-    console.log('chegou aqui', this.formulario.value);
+  updateSuplemento() {
     if(this.formulario.valid) {
       this.service.updateSuplemento(this.formulario.value).subscribe(() =>{
         this.router.navigate(['/listarSuplemento'])
@@ -50,7 +50,7 @@ export class EditarComponent {
   }
 
   cancelar() {
-    this.router.navigate(['/listarSuplemento'])
+    this.router.navigate(['/listarSuplementos'])
   }
 }
 

@@ -42,6 +42,13 @@
             "email": "joao@gmail.com",
             "telefone": "324",
             "senha": "123"
+        },
+        {
+            "gymID": 6,
+            "nome": "Admin",
+            "email": "admin@admin",
+            "telefone": "123",
+            "senha": "admin"
         }
     ]
 }

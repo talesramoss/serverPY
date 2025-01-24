@@ -33,6 +33,7 @@
           formControlName="valor"
           id="valor"
           name="valor"
+
           >
           <div class="mensagem__erro" *ngIf="formulario.get('valor')?.errors?.['required'] && formulario.get('valor')?.touched">
             Esse campo é obrigatório
@@ -42,7 +43,7 @@
           </div>
       </div>
       <div class="botao">
-        <button (click)="editarSuplemento()">Editar</button>
+        <button (click)="updateSuplemento()">Editar</button>
         <button (click)="cancelar()">Cancelar</button>
       </div>
     </div>

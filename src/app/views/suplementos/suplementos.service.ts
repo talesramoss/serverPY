@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Suplemento } from '../interface';
 
 @Injectable({
   providedIn: 'root'
@@ -39,6 +40,6 @@ export class SuplementosService {
 
     const url = `${this.url_API}/editar`;
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-    return this.http.put(url, suplemento, { headers });
+    return this.http.put<Suplemento>(url, suplemento, { headers });
   }
 }
