@@ -11,6 +11,15 @@ section {
     display: flex;
     justify-content: space-between;
     text-align: center;
+    h2{
+      font-size: 2rem;
+      font-weight: bold;
+      padding-left: 21rem;
+      padding-top: 60px;
+    }
+    button{
+      margin-top: 60px;
+    }
   }
 
   .botao {
