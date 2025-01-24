@@ -5,18 +5,6 @@
             "nomeSuplemento": "Creatina",
             "marca": "Black skill",
             "valor": "79,99"
-        },
-        {
-            "suplemento_id": 7,
-            "nomeSuplemento": "Tales Araujo Ramos",
-            "marca": "2ew",
-            "valor": "23,88"
-        },
-        {
-            "suplemento_id": 8,
-            "nomeSuplemento": "creatina",
-            "marca": "black skull",
-            "valor": "59,99"
         }
     ],
     "gymBros": [
@@ -33,6 +21,27 @@
             "email": "tudo",
             "telefone": "9899",
             "senha": "admin"
+        },
+        {
+            "gymID": 3,
+            "nome": "diego",
+            "email": "diego@email",
+            "telefone": "86986",
+            "senha": "1234"
+        },
+        {
+            "gymID": 4,
+            "nome": "gabriel",
+            "email": "gabriel@gmail.com",
+            "telefone": "1234",
+            "senha": "123"
+        },
+        {
+            "gymID": 5,
+            "nome": "joao",
+            "email": "joao@gmail.com",
+            "telefone": "324",
+            "senha": "123"
         }
     ]
 }

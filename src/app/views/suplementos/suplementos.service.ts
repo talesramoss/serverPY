@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { SubscriptionLoggable } from 'rxjs/internal/testing/SubscriptionLoggable';
 
 @Injectable({
   providedIn: 'root'
@@ -42,5 +41,4 @@ export class SuplementosService {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.http.put(url, suplemento, { headers });
   }
-
 }

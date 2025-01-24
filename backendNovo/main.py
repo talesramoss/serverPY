@@ -59,7 +59,7 @@ async def criarSuplemento(
         "valor": valor,
     }
     suplementos.append(suplemento)
-    salvar_dados(suplementos, gymBros)  
+    salvar_dados(suplementos, gymBros)
     return ('suplemento adicionado com sucesso')
 
 @app.put("/suplementos/editar")
@@ -124,7 +124,7 @@ async def criarUsuario(
         "senha": senha
     }
     gymBros.append(usuario)
-    salvar_dados(suplementos, gymBros)  
+    salvar_dados(suplementos, gymBros)
     return ('Usuario adicionado com sucesso')
 
 @app.put("/usuario")

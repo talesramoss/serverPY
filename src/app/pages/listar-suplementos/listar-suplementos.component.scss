@@ -7,18 +7,14 @@ section {
 
   .info {
     margin: 180px;
-    padding: 0 10rem;
+    padding: 0 6rem;
     display: flex;
     justify-content: space-between;
     text-align: center;
+
     h2{
       font-size: 2rem;
       font-weight: bold;
-      padding-left: 21rem;
-      padding-top: 60px;
-    }
-    button{
-      margin-top: 60px;
     }
   }
 
@@ -42,24 +38,24 @@ section {
   }
 
   .tela-listagem {
-    
+
     background-color: white;
     position: absolute;
     top: 20rem;
     width: 64%;
     display: flex;
-    justify-content: center;  
+    justify-content: center;
     border-radius: 10px;
     align-items: center;
-    padding: 40px 0;  
+    padding: 40px 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   }
 
 
   table {
-    
+
     width: 70%;
-    
+
     th, td{
       font-size: 16px;
       padding: 10px 0;
