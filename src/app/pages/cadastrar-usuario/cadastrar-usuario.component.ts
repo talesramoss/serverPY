@@ -36,4 +36,8 @@ export class CadastrarUsuarioComponent {
       })
     }
   }
+
+  entrar(){
+    this.router.navigate(['/login'])
+  }
 }
