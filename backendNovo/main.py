@@ -69,17 +69,13 @@ async def updateSuplemento(
     marca: str = Form(...),
     valor: str = Form(...)
 ):
-    suplemento = {
-        "suplemento_id": (len(suplementos) + 1),
-        "nomeSuplemento": nomeSuplemento,
-        "marca": marca,
-        "valor": valor,
-    }
+    print(f"Recebido: {suplemento_id}, {nomeSuplemento}, {marca}, {valor}")  # Adicione este log
     for suplemento in suplementos:
         if suplemento["suplemento_id"] == suplemento_id:
-            suplemento.update({'nomeSuplemento': nomeSuplemento, 'marca': marca, 'valor': valor })
-            return 'Atulização feita com sucesso'
-    raise HTTPException (status_code=404, detail="suplemento não foi atualizado.")
+            suplemento.update({'nomeSuplemento': nomeSuplemento, 'marca': marca, 'valor': valor})
+            return {'message': 'Atualização feita com sucesso'}
+    raise HTTPException(status_code=404, detail="Suplemento não foi encontrado.")
+
 
 @app.delete("/suplementos/{suplemento_id}")
 async def deleteSuplemento(suplemento_id: int):

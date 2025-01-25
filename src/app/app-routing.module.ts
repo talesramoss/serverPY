@@ -36,6 +36,9 @@ const routes: Routes = [
   {
     path: 'excluirSuplemento',
     component: ExcluirComponent
+  },
+  { path: 'editar/:id',
+    component: EditarComponent
   }
 ];
 

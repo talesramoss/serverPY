@@ -35,13 +35,18 @@ export class SuplementosService {
     return this.http.get(url)
   }
 
-  updateSuplemento(suplemento_id: any): Observable<any> {
-
+  updateSuplemento(suplemento_id: any, payload: any): Observable<any> {
     const url = `${this.url_API}/editar/${suplemento_id}`;
-    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-    console.log('Payload enviado:', suplemento_id);
-    return this.http.put<any>(url, suplemento_id, { headers });
-  }
+    const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+
+    const body = new URLSearchParams();
+    body.set('nomeSuplemento', payload.nomeSuplemento);
+    body.set('marca', payload.marca);
+    body.set('valor', payload.valor);
+
+    console.log('Payload enviado:', body.toString());
+    return this.http.put<any>(url, body.toString(), { headers });
+}
 
   deleteSuplemento(suplemento_id: any): Observable<any> {
     const url = `${this.url_API}/${suplemento_id}`
