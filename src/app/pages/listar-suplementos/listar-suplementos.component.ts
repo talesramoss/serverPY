@@ -35,6 +35,6 @@ export class ListarSuplementosComponent {
   }
 
   excluir() {
-
+    this.router.navigate(['/excluirSuplemento'])
   }
 }

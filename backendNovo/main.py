@@ -62,7 +62,7 @@ async def criarSuplemento(
     salvar_dados(suplementos, gymBros)
     return ('suplemento adicionado com sucesso')
 
-@app.put("/suplementos/editar")
+@app.put("/suplementos/editar/{suplemento_id}")
 async def updateSuplemento(
     suplemento_id: int,
     nomeSuplemento: str = Form(...),
@@ -79,7 +79,7 @@ async def updateSuplemento(
         if suplemento["suplemento_id"] == suplemento_id:
             suplemento.update({'nomeSuplemento': nomeSuplemento, 'marca': marca, 'valor': valor })
             return 'Atulização feita com sucesso'
-        raise HTTPException (status_code=404, detail="suplemento não foi atualizado.")
+    raise HTTPException (status_code=404, detail="suplemento não foi atualizado.")
 
 @app.delete("/suplementos/{suplemento_id}")
 async def deleteSuplemento(suplemento_id: int):
@@ -87,7 +87,7 @@ async def deleteSuplemento(suplemento_id: int):
         if suplemento["suplemento_id"] ==  suplemento_id:
             suplementos.pop(apagador)
             return 'o suplemento foi deletado'
-        raise HTTPException (status_code=404, detail="Suplemento não foi deletado.")
+    raise HTTPException (status_code=404, detail="Suplemento não foi deletado.")
 
 @app.get("/suplementosSearch")
 async def searchSuplementos(name : str = Query(...)):

@@ -11,6 +11,7 @@ import { CadastrarSuplementoComponent } from './pages/cadastrar-suplemento/cadas
 import { TelaLoginComponent } from './pages/tela-login/tela-login.component';
 import { CadastrarUsuarioComponent } from './pages/cadastrar-usuario/cadastrar-usuario.component';
 import { EditarComponent } from './pages/editar/editar.component';
+import { ExcluirComponent } from './pages/excluir/excluir.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { EditarComponent } from './pages/editar/editar.component';
     TelaLoginComponent,
     CadastrarUsuarioComponent,
     EditarComponent,
+    ExcluirComponent,
   ],
   imports: [
     BrowserModule,

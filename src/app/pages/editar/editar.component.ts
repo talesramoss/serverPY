@@ -44,7 +44,7 @@ export class EditarComponent {
   updateSuplemento() {
     if(this.formulario.valid) {
       this.service.updateSuplemento(this.formulario.value).subscribe(() =>{
-        this.router.navigate(['/listarSuplemento'])
+        this.router.navigate(['/listarSuplementos'])
       })
     }
   }

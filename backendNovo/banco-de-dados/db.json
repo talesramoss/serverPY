@@ -5,6 +5,36 @@
             "nomeSuplemento": "Creatina",
             "marca": "Black skill",
             "valor": "79,99"
+        },
+        {
+            "suplemento_id": 2,
+            "nomeSuplemento": "ds",
+            "marca": "sd",
+            "valor": "123,23"
+        },
+        {
+            "suplemento_id": 3,
+            "nomeSuplemento": "qwe",
+            "marca": "qwe",
+            "valor": "79,99"
+        },
+        {
+            "suplemento_id": 4,
+            "nomeSuplemento": "qwe",
+            "marca": "qwe",
+            "valor": "79,99"
+        },
+        {
+            "suplemento_id": 5,
+            "nomeSuplemento": "qwe",
+            "marca": "qwe",
+            "valor": "79,99"
+        },
+        {
+            "suplemento_id": 6,
+            "nomeSuplemento": "13",
+            "marca": "213",
+            "valor": "123,23"
         }
     ],
     "gymBros": [
