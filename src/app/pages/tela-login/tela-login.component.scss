@@ -10,7 +10,7 @@ main{
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: radial-gradient(circle at top left, white 50%, #4e4ee2 40%);
+  background: radial-gradient(circle at top left, white 50%, #FF7F50 40%);
   height: 100vh;
   justify-content: center;
   padding-right: 150px;
@@ -18,14 +18,15 @@ main{
   .formulario{
     max-height:450px;
     width: 45%;
-    padding: 20px;
+    padding: 30px 40px;
     max-width: 900px;
     background-color: #fff;
-    box-shadow: 0 4px 90px rgba(0, 0, 0, 0.6);
-    border-radius: 10px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
     h2{
-      color: #333;
-      text-decoration: none;
+      color: #E64A19;
+      margin-bottom: 25px;
+      font-size: 28px;
       height: 70px;
       display: flex;
       padding-left: 60px;
@@ -42,14 +43,20 @@ main{
     }
 
     input{
-
       width: 40%;
-      padding: 5px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
+      padding: 12px 15px;
+      margin-bottom: 20px;
+      border: 2px solid #e1e1e1;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      
+      &:focus {
+        border-color: #FF7F50;
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(255, 127, 80, 0.1);
       }
     }
+  }
     display: flex;
     flex-direction: column;
     text-align: start;
@@ -61,24 +68,30 @@ main{
 
   button {
     width: 40%;
-    border-radius: 5px;
+    border-radius: 8px;
     margin-top: 20px;
-    padding: 5px 0;
+    padding: 12px 0;
     border: none;
     color: white;
-    background-color: #007bff;
+    background-color: #FF7F50;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
   }
 
   button:hover {
-    background: rgb(48, 57, 218);
+    background: #fe7847;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 127, 80, 0.3);
   }
 
 
   .mensagem__erro {
     position: relative;
     top: -15px;
-    color: red;
-    font-size: 10px;
+    color: #ff3333;
+    font-size: 12px;
+    font-weight: 500;
   }
 
   .toglle {
@@ -91,16 +104,21 @@ main{
     justify-content: center;
     height: 100vh;
     max-height: 370px;
-    background-color: #4e4ee2;
+    background-color: #FF7F50;
     width: 28%;
     border-radius: 150px 30px 30px 150px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.9);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
   }
 
   img{
     width: 430px;
     margin-bottom: 100px;
     margin-right: 30px;
+    transition: transform 0.3s ease;
+  }
+
+  img:hover {
+    transform: scale(1.02);
   }
 
   .lado-direito{
@@ -113,24 +131,33 @@ main{
 
     .pergunta{
       color: #fff;
+      padding-top: 1rem;
       position: relative;
       max-height: 0.3rem;
       padding-left: 2px;
       padding-top: 10px;
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: 15px;
     }
 
     .cadastro{
       width: 190px;
-      border-radius: 15px;
+      border-radius: 25px;
       margin-top: 20px;
-      padding: 5px 0;
-      border: none;
+      padding: 12px 0;
+      border: 2px solid #fff;
       color: white;
-      background-color: #007bff;
+      background-color: transparent;
+      transition: all 0.3s ease;
+      cursor: pointer;
     }
 
     .cadastro:hover{
-      background-color: rgb(48, 57, 218);
+      background-color: #fff;
+      color: #FF7F50;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(255, 127, 80, 0.3);
     }
   }
 }
