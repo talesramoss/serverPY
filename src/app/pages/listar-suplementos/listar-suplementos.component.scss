@@ -3,32 +3,22 @@ section {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #f4f4f4;
+  background: radial-gradient(circle at top left, white 50%, #FF7F50 40%);
+  top: 10rem;
 
   .info {
-    margin: 180px;
-    padding: 0 6rem;
     display: flex;
     justify-content: space-between;
     text-align: center;
-
+    margin-left: 45rem;
+    margin-top: 10rem;
     h2{
       font-size: 2rem;
       font-weight: bold;
+      color: #333;
     }
   }
 
-  .botao {
-    padding: 10px 15px;
-    border-radius: 8px;
-    background-color: rgb(78, 78, 226);
-    color: white;
-    border: none;
-  }
-  .botao:hover{
-    background-color: #0056b3;
-    color: white;
-  }
   .listagem{
     display: flex;
     flex-direction: column;
@@ -49,6 +39,7 @@ section {
     align-items: center;
     padding: 40px 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    top: 13rem;
   }
 
 
@@ -79,5 +70,17 @@ section {
       }
     }
   }
+  .button-add{
+    position: absolute;
+    top: 24rem;
+    max-width: 55px;
+    left: 67rem;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+    &:hover{
+      transform: scale(1.20);
+    }
+  }
 }
+
 

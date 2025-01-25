@@ -11,7 +11,7 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: radial-gradient(circle at top left, white 55%, #4e4ee2 35%);
+  background: radial-gradient(circle at top left, #FF7F50 55%, white 35%);
 
   form {
     width: 100%;
@@ -46,7 +46,7 @@ section {
 
         &:focus {
           outline: none;
-          border-color: #4e4ee2;
+          border-color: #FF7F50;
         }
       }
     }
@@ -66,11 +66,11 @@ section {
         transition: background-color 0.3s;
 
         &:first-child {
-          background-color: #007bff;
+          background-color: #FF7F50;
           color: white;
 
           &:hover {
-            background-color: rgb(48, 57, 218);
+            background-color: #fd703d;
           }
         }
 

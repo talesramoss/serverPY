@@ -8,7 +8,6 @@
         },
         {
             "suplemento_id": 2,
-<<<<<<< Updated upstream
             "nomeSuplemento": "ds",
             "marca": "sd",
             "valor": "123,23"
@@ -36,11 +35,6 @@
             "nomeSuplemento": "13",
             "marca": "213",
             "valor": "123,23"
-=======
-            "nomeSuplemento": "Basic Whey Protein",
-            "marca": "Growth Supplements",
-            "valor": "45,90"
->>>>>>> Stashed changes
         }
     ],
     "gymBros": [
