@@ -2,7 +2,6 @@
   padding: 10rem 0;
   .text {
     background: #fff;
-    box-shadow: -9px -8px 0px 0px #154580;
     min-width: 360px;
     min-height: 150px;
     position: fixed;
@@ -14,6 +13,8 @@
     font-size: 1.5rem;
     text-align: center;
     padding-top: 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 1);
 
 
     .actions {
@@ -28,6 +29,15 @@
         margin: 5px;
         margin-top: 70px;
         width: 200px;
+        background: #FF7F50;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        &:hover {
+          background: #f05e29;
+          color: #fff;
+        }
       }
 
       .botao-cancelar {
@@ -48,10 +58,9 @@
 }
 
 .fundo {
-  background: radial-gradient(circle at top left, white 50%, #154580 40%);
+  background: radial-gradient(circle at top left, #FF7F50 50%, white 40%);
   height: 100vh;
   left: 0;
-  opacity: 0.5;
   position: fixed;
   top: 0;
   width: 100vw;
