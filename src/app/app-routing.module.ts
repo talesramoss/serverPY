@@ -30,10 +30,8 @@ const routes: Routes = [
     path: 'loginCadastrar',
     component: CadastrarUsuarioComponent
   },
-  {
-    path: 'editarSuplemento',
-    component: EditarComponent
-  },
+  { path: 'editar/:id',
+    component: EditarComponent },
   {
     path: 'excluirSuplemento',
     component: ExcluirComponent

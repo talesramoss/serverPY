@@ -1,41 +1,39 @@
 <section>
   <div class="info">
-    <h2>Listagem de Suplementos</h2>  
+    <h2>Listagem de Suplementos</h2>
   </div>
-
 
   <div class="listagem">
-    <div class="tela-listagem" *ngIf="listarSuplemento.length !== 0, else naoTemSuplementos">
-
+    <div class="tela-listagem" *ngIf="listarSuplemento.length !== 0; else naoTemSuplementos">
       <table>
         <thead>
-            <tr>
-              <th>ID</th>
-              <th>Nome do Suplemento</th>
-              <th>Marca</th>
-              <th>Valor</th>
-              <th>Ações</th>
-            </tr>
-            <tr *ngFor="let item of listarSuplemento">
-              <td>{{item.suplemento_id}}</td>
-              <td>{{item.nomeSuplemento}}</td>
-              <td>{{item.marca}}</td>
-              <td>R${{item.valor}}</td>
-              <div class="icon">
-                <img src="../../../assets/acoes/pencil-square.svg" alt="editar" (click)="editar()">
-                <img src="../../../assets/acoes/trash3-fill.svg" alt="excluir" (click)="excluir()">
-              </div>
-            </tr>
+          <tr>
+            <th>ID</th>
+            <th>Nome do Suplemento</th>
+            <th>Marca</th>
+            <th>Valor</th>
+            <th>Ações</th>
+          </tr>
         </thead>
+        <tbody>
+          <tr *ngFor="let item of listarSuplemento">
+            <td>{{ item.suplemento_id }}</td>
+            <td>{{ item.nomeSuplemento }}</td>
+            <td>{{ item.marca }}</td>
+            <td>R${{ item.valor }}</td>
+            <td>
+              <div class="icon">
+                <img src="../../../assets/acoes/pencil-square.svg" alt="editar" (click)="editar(item.suplemento_id)"> <!-- Pass the ID here -->
+                <img src="../../../assets/acoes/trash3-fill.svg" alt="excluir" (click)="excluir()"> <!-- Pass the ID here -->
+              </div>
+            </td>
+          </tr>
+        </tbody>
       </table>
       <img src="../../../assets/imgs/buttons/plus.png" alt="cadastrar" (click)="cadastrar()" class="button-add">
-
     </div>
-
-
   </div>
 </section>
-
 
 <ng-template #naoTemSuplementos>
   <small>Nenhum suplemento cadastrado</small>

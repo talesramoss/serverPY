@@ -43,7 +43,7 @@ export class TelaLoginComponent {
 
       this.user.loginUsuario(email, senha).subscribe((response) => {
         console.log('Login: ',response);
-        this.router.navigate(['/listarSuplementos'])
+        this.router.navigate(['/home'])
       })
     }
     else {

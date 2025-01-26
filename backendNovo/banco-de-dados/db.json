@@ -5,36 +5,6 @@
             "nomeSuplemento": "Creatina",
             "marca": "Black skill",
             "valor": "79,99"
-        },
-        {
-            "suplemento_id": 2,
-            "nomeSuplemento": "ds",
-            "marca": "sd",
-            "valor": "123,23"
-        },
-        {
-            "suplemento_id": 3,
-            "nomeSuplemento": "qwe",
-            "marca": "qwe",
-            "valor": "79,99"
-        },
-        {
-            "suplemento_id": 4,
-            "nomeSuplemento": "qwe",
-            "marca": "qwe",
-            "valor": "79,99"
-        },
-        {
-            "suplemento_id": 5,
-            "nomeSuplemento": "qwe",
-            "marca": "qwe",
-            "valor": "79,99"
-        },
-        {
-            "suplemento_id": 6,
-            "nomeSuplemento": "13",
-            "marca": "213",
-            "valor": "123,23"
         }
     ],
     "gymBros": [
@@ -44,41 +14,6 @@
             "email": "davimaciel077@gmail.com",
             "telefone": "88997652424",
             "senha": "1234"
-        },
-        {
-            "gymID": 2,
-            "nome": "oi",
-            "email": "tudo",
-            "telefone": "9899",
-            "senha": "admin"
-        },
-        {
-            "gymID": 3,
-            "nome": "diego",
-            "email": "diego@email",
-            "telefone": "86986",
-            "senha": "1234"
-        },
-        {
-            "gymID": 4,
-            "nome": "gabriel",
-            "email": "gabriel@gmail.com",
-            "telefone": "1234",
-            "senha": "123"
-        },
-        {
-            "gymID": 5,
-            "nome": "joao",
-            "email": "joao@gmail.com",
-            "telefone": "324",
-            "senha": "123"
-        },
-        {
-            "gymID": 6,
-            "nome": "Admin",
-            "email": "admin@admin",
-            "telefone": "123",
-            "senha": "admin"
         }
     ]
 }

@@ -1,4 +1,8 @@
 <section>
+  <div *ngIf="loading">Atualizando suplemento...</div>
+  <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+
+
   <form [formGroup]="formulario" (ngSubmit)="updateSuplemento()">
     <div class="formulario">
       <div class="inputs">
@@ -38,7 +42,7 @@
         </div>
       </div>
       <div class="botao">
-        <button type="submit">Atualizar</button>
+        <button type="submit" (click)="atualizar()">Atualizar</button>
         <button type="button" (click)="cancelar()">Cancelar</button>
       </div>
     </div>

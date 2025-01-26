@@ -1,13 +1,14 @@
 section {
+  position: absolute;
   width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   background: radial-gradient(circle at top left, white 50%, #FF7F50 40%);
-  top: 10rem;
+
 
   .info {
-    min-height: 50vh;
+    min-height: 20vh;
     display: flex;
     text-align: center;
     justify-content: center;
@@ -31,7 +32,7 @@ section {
 
     background-color: white;
     position: absolute;
-    top: 20rem;
+    top: 10rem;
     width: 64%;
     display: flex;
     justify-content: center;
@@ -39,7 +40,7 @@ section {
     align-items: center;
     padding: 40px 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    top: 13rem;
+    top: 7rem;
   }
 
 

@@ -21,16 +21,16 @@ export class ExcluirComponent {
 
   }
 
-  ngOnInit(): void{
-    const id = this.route.snapshot.paramMap.get('id')
-        const idNumber = Number(id)
+  // ngOnInit(): void{
+  //   const id = this.route.snapshot.paramMap.get('id')
+  //       const idNumber = Number(id)
 
-        if(id){
-          this.service.getForIDSuplementos(idNumber).subscribe((suplemento) => {
-            this.formulario = suplemento
-          })
-        }
-  }
+  //       if(id){
+  //         this.service.getForIDSuplementos(idNumber).subscribe((suplemento) => {
+  //           this.formulario = suplemento
+  //         })
+  //       }
+  // }
 
 
   excluir(): void {
