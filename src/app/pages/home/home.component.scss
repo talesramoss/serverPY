@@ -1,0 +1,35 @@
+main {
+  background-image: url('../../../assets/imgs/landing-img/home/physical-activity-stats-around-person.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  .container {
+    padding-top: 300px;
+    h1 {
+      font-size: 4rem;
+      font-weight: bold;
+      color: #FF7F50;
+    }
+    p {
+      font-size: 1.5rem;
+      color: #FF7F50;
+    }
+    button {
+        width: 190px;
+        border-radius: 15px;
+        margin-top: 20px;
+        padding: 12px 0;
+        border: 2px solid #fff;
+        color: white;
+        background-color: transparent;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        &:hover {
+          background-color: #fff;
+          color: #FF7F50;
+          transform: translateY(-2px);
+        }
+    }
+  }
+}
