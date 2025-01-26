@@ -20,7 +20,7 @@ export class EditarComponent {
         private suplementoService: SuplementosService,
         private router: Router
     ) {
-      this.formulario = this.fb.group({
+    this.formulario = this.fb.group({
         suplemento_id: [null, Validators.required],
         nomeSuplemento: ['', Validators.required],
         marca: ['', Validators.required],
