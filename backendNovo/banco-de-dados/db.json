@@ -11,19 +11,13 @@
             "nomeSuplemento": "Whey",
             "marca": "Marca y",
             "valor": "130,90"
-        },
-        {
-            "suplemento_id": 3,
-            "nomeSuplemento": "Testando",
-            "marca": "Marca X",
-            "valor": "79,90"
         }
     ],
     "gymBros": [
         {
             "gymID": 1,
             "nome": "Davi Maciel e Silva",
-            "email": "davimaciel077@gmail.com",
+            "email": "davi@gmail.com",
             "telefone": "88997652424",
             "senha": "1234"
         }
