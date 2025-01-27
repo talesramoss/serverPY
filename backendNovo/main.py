@@ -1,15 +1,18 @@
 import json
-from fastapi import FastAPI, Form, Query, HTTPException
+from fastapi import FastAPI, Form,  Query, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
+
 
 app = FastAPI()
 
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:4200"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"]
+    allow_origins = ["http://localhost:4200"],
+    allow_credentials = True,
+    allow_methods = ["*"],
+    allow_headers = ["*"]
 )
 
 def carregar_dados():
@@ -33,21 +36,22 @@ def salvar_dados(suplementos, gymBros):
 suplementos, gymBros = carregar_dados()
 
 @app.get('/suplementos')
-async def list_suplementos():
+async def listSuplementos():
     return suplementos
 
+
 @app.get("/suplementos/{suplemento_id}")
-async def get_suplemento_by_id(suplemento_id: int):
+async def getForIDSuplementos(suplemento_id: int):
     for suplemento in suplementos:
         if suplemento["suplemento_id"] == suplemento_id:
             return suplemento
-    raise HTTPException(status_code=404, detail="O ID do seu suplemento não está registrado.")
+    raise HTTPException (status_code=404, detail="O ID do seu suplemento não está registrado.")
 
 @app.post("/suplementos/criar")
-async def criar_suplemento(
+async def criarSuplemento(
     nomeSuplemento: str = Form(...),
     marca: str = Form(...),
-    valor: float = Form(...)
+    valor: str = Form(...)
 ):
     suplemento = {
         "suplemento_id": len(suplementos) + 1,
@@ -57,51 +61,57 @@ async def criar_suplemento(
     }
     suplementos.append(suplemento)
     salvar_dados(suplementos, gymBros)
-    return {'message': 'Suplemento adicionado com sucesso'}
+    return ('suplemento adicionado com sucesso')
+
+
+class SuplementoUpdate(BaseModel):
+    nomeSuplemento: str
+    marca: str
+    valor: str
 
 @app.put("/suplementos/editar/{suplemento_id}")
-async def update_suplemento(
-    suplemento_id: int,
-    nomeSuplemento: str = Form(...),
-    marca: str = Form(...),
-    valor: float = Form(...)
-):
-    for suplemento in suplementos:
-        if suplemento["suplemento_id"] == suplemento_id:
-            suplemento.update({'nomeSuplemento': nomeSuplemento, 'marca': marca, 'valor': valor})
-            salvar_dados(suplementos, gymBros)  # Salvar dados após a atualização
+async def updateSuplemento(suplemento_id: int, suplemento: SuplementoUpdate):
+    print(f"Recebido ID: {suplemento_id}, Dados: {suplemento}")
+    for item in suplementos:
+        if item["suplemento_id"] == suplemento_id:
+            item.update({
+                'nomeSuplemento': suplemento.nomeSuplemento,
+                'marca': suplemento.marca,
+                'valor': suplemento.valor
+            })
             return {'message': 'Atualização feita com sucesso'}
     raise HTTPException(status_code=404, detail="Suplemento não foi encontrado.")
 
 @app.delete("/suplementos/{suplemento_id}")
-async def delete_suplemento(suplemento_id: int):
-    for index, suplemento in enumerate(suplementos):
-        if suplemento["suplemento_id"] == suplemento_id:
-            suplementos.pop(index)
-            salvar_dados(suplementos, gymBros)  # Salvar dados após a exclusão
-            return {'message': 'O suplemento foi deletado'}
-    raise HTTPException(status_code=404, detail="Suplemento não foi deletado.")
+async def deleteSuplemento(suplemento_id: int):
+    for apagador, suplemento in enumerate(suplementos):
+        if suplemento["suplemento_id"] ==  suplemento_id:
+            suplementos.pop(apagador)
+            return 'o suplemento foi deletado'
+    raise HTTPException (status_code=404, detail="Suplemento não foi deletado.")
 
 @app.get("/suplementosSearch")
-async def search_suplementos(name: str = Query(...)):
-    procurando_suplementos = [suplemento for suplemento in suplementos if name.lower() in suplemento["nomeSuplemento"].lower()]
-    if procurando_suplementos:
-        return {'suplementos encontrados': procurando_suplementos}
-    raise HTTPException(status_code=404, detail="Verifique o nome do suplemento.")
+async def searchSuplementos(name : str = Query(...)):
+    procurandoSuplementos = [suplemento for suplemento in suplementos if name.lower() in suplemento["nomeSuplemento"].lower()]
+    if procurandoSuplementos:
+        return {'o seu suplmento é': procurandoSuplementos}
+    raise HTTPException (status_code=404, detail="Verifique o nome do suplemento.")
+
 
 @app.get('/usuario')
-async def list_usuarios():
+async def listSuplementos():
     return gymBros
 
+
 @app.get("/usuario/{gymID}")
-async def get_usuario_by_id(gymID: int):
+async def getForIDSusuario(gymID: int):
     for usuario in gymBros:
         if usuario["gymID"] == gymID:
             return usuario
-    raise HTTPException(status_code=404, detail="O ID do Usuário não está registrado.")
+    raise HTTPException (status_code=404, detail="O ID do Usuario não está registrado.")
 
 @app.post("/usuario/criar")
-async def criar_usuario(
+async def criarUsuario(
     nome: str = Form(...),
     email: str = Form(...),
     telefone: str = Form(...),
@@ -116,42 +126,47 @@ async def criar_usuario(
     }
     gymBros.append(usuario)
     salvar_dados(suplementos, gymBros)
-    return {'message': 'Usuário adicionado com sucesso'}
+    return ('Usuario adicionado com sucesso')
 
 @app.put("/usuario")
-async def update_usuario(
+async def updateUsuario(
     gymID: int,
     nome: str = Form(...),
     email: str = Form(...),
     telefone: str = Form(...),
     senha: str = Form(...)
 ):
+    usuario = {
+        "gymID": (len(gymBros) + 1),
+        "nome": nome,
+        "email": email,
+        "telefone": telefone,
+        "senha": senha
+    }
     for usuario in gymBros:
         if usuario["gymID"] == gymID:
-            usuario.update({'nome': nome, 'email': email, 'telefone': telefone, 'senha': senha})
-            salvar_dados(suplementos, gymBros)  # Salvar dados após a atualização
-            return {'message': 'Atualização feita com sucesso'}
-    raise HTTPException(status_code=404, detail="Usuário não foi atualizado.")
+            usuario.update({'nome': nome, 'email': email, 'telefone': telefone, 'senha': senha })
+            return 'Atulização feita com sucesso'
+    raise HTTPException (status_code=404, detail="Usuario não foi atualizado.")
 
 @app.delete("/usuario")
-async def delete_usuario(gymID: int):
-    for index, usuario in enumerate(gymBros):
-        if usuario["gymID"] == gymID:
-            gymBros.pop(index)
-            salvar_dados(suplementos, gymBros)  # Salvar dados após a exclusão
-            return {'message': 'O usuário foi deletado'}
-    raise HTTPException(status_code=404, detail="Usuário não foi deletado.")
+async def deleteUsuario(gymID: int):
+    for apagador, usuario in enumerate(gymBros):
+        if usuario["gymID"] ==  gymID:
+            gymBros.pop(apagador)
+            return 'o usuario foi deletado'
+    raise HTTPException (status_code=404, detail="Usuario não foi deletado.")
 
 @app.get("/usuarioSearch")
-async def search_usuario(name: str = Query(...)):
-    procurando_usuario = [usuario for usuario in gymBros if name.lower() in usuario["nome"].lower()]
-    if procurando_usuario:
-        return {'usuários encontrados': procurando_usuario}
-    raise HTTPException(status_code=404, detail="Verifique o nome do usuário.")
+async def searchUsuario(name : str = Query(...)):
+    procurandoUsuario = [usuario for usuario in gymBros if name.lower() in usuario["nome"].lower()]
+    if procurandoUsuario:
+        return {'o usuario é': procurandoUsuario}
+    raise HTTPException (status_code=404, detail="Verifique o nome do usuario.")
 
 @app.post("/login")
-async def login_usuario(email: str = Form(...), senha: str = Form(...)):
+async def loginUsuario(email: str = Form(...), senha: str = Form(...)):
     for usuario in gymBros:
         if usuario["email"] == email and usuario["senha"] == senha:
-            return {'message': 'Usuário logado com sucesso'}
-    raise HTTPException(status_code=404, detail="Usuário não existe.")
+            return 'Usuario logado com sucesso'
+    raise HTTPException (status_code=404, detail="Usuario não Existe.")

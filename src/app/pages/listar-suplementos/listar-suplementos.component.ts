@@ -30,7 +30,7 @@ export class ListarSuplementosComponent {
     this.router.navigate(['/editar', suplementoId]); // Pass the ID
   }
 
-  excluir() {
-    this.router.navigate(['/excluirSuplemento']);
+  excluir(suplementoId: Number) {
+    this.router.navigate(['/excluirSuplemento', suplementoId]);
   }
 }

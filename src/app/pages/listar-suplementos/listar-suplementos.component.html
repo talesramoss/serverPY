@@ -23,17 +23,17 @@
             <td>R${{ item.valor }}</td>
             <td>
               <div class="icon">
-                <img src="../../../assets/acoes/pencil-square.svg" alt="editar" (click)="editar(item.suplemento_id)"> <!-- Pass the ID here -->
-                <img src="../../../assets/acoes/trash3-fill.svg" alt="excluir" (click)="excluir()"> <!-- Pass the ID here -->
+                <img src="../../../assets/acoes/pencil-square.svg" alt="editar" (click)="editar(item.suplemento_id)">
+                <img src="../../../assets/acoes/trash3-fill.svg" alt="excluir" (click)="excluir(item.suplemento_id)">
               </div>
             </td>
           </tr>
         </tbody>
       </table>
-      <img src="../../../assets/imgs/buttons/plus.png" alt="cadastrar" (click)="cadastrar()" class="button-add">
     </div>
   </div>
 </section>
+<img src="../../../assets/imgs/buttons/plus.png" alt="cadastrar" (click)="cadastrar()" class="button-add">
 
 <ng-template #naoTemSuplementos>
   <small>Nenhum suplemento cadastrado</small>

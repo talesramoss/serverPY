@@ -33,7 +33,7 @@ const routes: Routes = [
   { path: 'editar/:id',
     component: EditarComponent },
   {
-    path: 'excluirSuplemento',
+    path: 'excluirSuplemento/:id',
     component: ExcluirComponent
   },
   {

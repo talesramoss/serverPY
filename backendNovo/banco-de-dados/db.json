@@ -4,7 +4,19 @@
             "suplemento_id": 1,
             "nomeSuplemento": "Creatina",
             "marca": "Black skill",
-            "valor": "79,99"
+            "valor": "79,90"
+        },
+        {
+            "suplemento_id": 2,
+            "nomeSuplemento": "Whey",
+            "marca": "Marca y",
+            "valor": "130,90"
+        },
+        {
+            "suplemento_id": 3,
+            "nomeSuplemento": "Testando",
+            "marca": "Marca X",
+            "valor": "79,90"
         }
     ],
     "gymBros": [

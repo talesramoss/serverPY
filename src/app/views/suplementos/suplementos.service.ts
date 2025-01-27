@@ -19,9 +19,7 @@ export class SuplementosService {
   constructor(private http: HttpClient) { }
 
   listSuplementos(): Observable<Suplemento[]> {
-    return this.http.get<Suplemento[]>(this.url_API).pipe(
-      catchError(this.handleError)
-    );
+    return this.http.get<Suplemento[]>(this.url_API)
   }
 
   criarSuplementos(suplemento: Suplemento): Observable<Suplemento> {
@@ -34,34 +32,24 @@ export class SuplementosService {
       'Content-Type': 'application/x-www-form-urlencoded',
     });
 
-    return this.http.post<Suplemento>(`${this.url_API}/criar`, params.toString(), { headers }).pipe(
-      catchError(this.handleError)
-    );
+    return this.http.post<Suplemento>(`${this.url_API}/criar`, params.toString(), { headers })
   }
 
-  getForIDSuplementos(suplemento_id: number): Observable<Suplemento> {
-    const url = `${this.url_API}/${suplemento_id}`;
-    return this.http.get<Suplemento>(url).pipe(
-      catchError(this.handleError)
-    );
+  getForIDSuplementos(id: number): Observable<Suplemento> {
+    const url = `${this.url_API}/${id}`;
+    return this.http.get<Suplemento>(url)
   }
 
   updateSuplemento(suplementoId: number, payload: Suplemento): Observable<Suplemento> {
     const url = `${this.url_API}/editar/${suplementoId}`;
-    return this.http.put<Suplemento>(url, payload).pipe(
-      catchError(this.handleError)
-    );
+    return this.http.put<Suplemento>(url, payload);
   }
+
 
   deleteSuplemento(suplemento_id: number): Observable<any> {
     const url = `${this.url_API}/${suplemento_id}`;
-    return this.http.delete<any>(url).pipe(
-      catchError(this.handleError)
-    );
+    return this.http.delete<any>(url)
   }
 
-  private handleError(error: any) {
-    console.error('An error occurred:', error);
-    return throwError(() => new Error('Something went wrong; please try again later.'));
-  }
+
 }
